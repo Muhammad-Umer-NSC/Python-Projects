@@ -18,7 +18,15 @@ def main():
             # Allow up to 3 attempts to answer each question
             for j in range(3):
                 # Prompt the user for the answer
-                question = int(input(f"{x} + {y} = "))
+                question = input(f"{x} + {y} = ")
+                try:
+
+                    question = int(question)
+
+                except ValueError:
+                    print("EEE")
+                    tries += 1
+                    continue
 
                 # Check if the answer is correct
                 if question == answer:
