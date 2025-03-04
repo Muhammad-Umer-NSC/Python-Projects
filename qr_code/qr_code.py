@@ -3,8 +3,16 @@ import validators
 
 def main():
     text = url_checker()
-    file = input("Enter name: ")
+    file = file_checker()
     generate_qr_code(file, text)
+
+def file_checker():
+    while True:
+        file = input("Enter filename: ")
+        if file:
+            break
+        else:
+            print("File cannot be empty.")
 
 def url_checker():
     while True:
